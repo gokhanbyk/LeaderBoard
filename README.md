@@ -1,2 +1,3 @@
 # LeaderBoard
 Made a leaderboard using HTML, CSS, JS and will be updated
+- page: https://gokhanbyk.github.io/LeaderBoard/
