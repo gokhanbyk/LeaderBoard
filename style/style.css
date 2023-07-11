@@ -1,0 +1,81 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.container {
+  position: relative;
+  left: 50%;
+  transform: translate(-36%);
+  width: 70%;
+  margin-top: 10px;
+}
+.container input {
+  padding: 7px;
+  font-size: 16px;
+  border-color: pink;
+  border-radius: 18px;
+}
+.container #btn {
+  height: 36.5px;
+  width: 200px;
+  background-color: pink;
+  border-color: lightpink;
+  color: white;
+  font-size: 17px;
+  border-radius: 18px;
+}
+
+.wrapper {
+  padding: 0;
+  width: 70%;
+  height: 150px;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%);
+  margin-top: 30px;
+}
+.wrapper .wrapper-div {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  background-color: rgba(255, 192, 203, 0.834);
+  color: black;
+  font-size: 22px;
+  margin-top: 7px;
+  border-radius: 20px;
+}
+.wrapper .wrapper-div .p-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wrapper .wrapper-div .board-div {
+  display: flex;
+  gap: 10px;
+}
+.wrapper .wrapper-div .board-div .span-board {
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  background-color: white;
+  height: 50px;
+  color: black;
+}
+.wrapper .wrapper-div .board-div .span-board:hover {
+  background-color: rgb(212, 255, 147);
+  cursor: pointer;
+}
+
+i {
+  color: rgb(234, 80, 80);
+}/*# sourceMappingURL=style.css.map */
