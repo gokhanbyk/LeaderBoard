@@ -8,7 +8,11 @@ const wrapper = document.getElementsByClassName('wrapper')[0]
 
 
 btn.addEventListener('click', save)
-
+inputS.addEventListener('keydown', e => {
+    if(e.keyCode == 13) {
+        save()
+    }
+})
 
 
 
@@ -28,6 +32,7 @@ function save() {
         divC.classList.add('p-div')
         let divS = document.createElement('div')
         divS.classList.add('p-div')
+        divS.setAttribute('id', 'number')
         let divBoard = document.createElement('div')
         divBoard.classList.add('board-div')
 
@@ -67,17 +72,21 @@ function save() {
         pC.textContent = valueC.toUpperCase()
         let pS = document.createElement('p')
         pS.textContent = valueS
+
         divBoard.appendChild(spanDiv1)
         divBoard.appendChild(spanDiv2)
         divBoard.appendChild(spanDiv3)
+
         divFn.appendChild(pF)
         divFn.appendChild(pTime)
         divC.appendChild(pC)
         divS.appendChild(pS)
+
         wrapperDiv.appendChild(divFn)
         wrapperDiv.appendChild(divC)
         wrapperDiv.appendChild(divS)
         wrapperDiv.appendChild(divBoard)
+
         wrapper.appendChild(wrapperDiv)
 
     }
@@ -94,10 +103,8 @@ function remove() {
 
 function time() {
     let aylar = ['Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran', 'Temmuz', 'Ağustos', 'Eylül', 'Ekim', 'Kasım', 'Aralık']
-    let gunler = ['Pazar', 'Pazartesi', 'Salı', 'Çarşamba', 'Perşembe', 'Cuma', 'Cumartesi']
     let tarih = new Date()
     let ayinGunu = tarih.getDate()
-    let haftaninGun = tarih.getDay()
     let year = tarih.getFullYear()
     let month = tarih.getMonth()
     let saat = tarih.getHours()
