@@ -32,7 +32,6 @@ function save() {
         divC.classList.add('p-div')
         let divS = document.createElement('div')
         divS.classList.add('p-div')
-        divS.setAttribute('id', 'number')
         let divBoard = document.createElement('div')
         divBoard.classList.add('board-div')
 
@@ -48,15 +47,21 @@ function save() {
             value += 5
             valueS = value
             pS.textContent = value
+            orderScore()
         })
         let spanDiv3 = document.createElement('div')
         spanDiv3.classList.add('span-board')
         spanDiv3.textContent = '-5'
         spanDiv3.addEventListener('click', () => {
             let value = Number(valueS)
+            if(value == 0) {
+                return value
+            } else{
             value -= 5
             valueS = value
             pS.textContent = value
+            orderScore()
+        }
         })
 
 
@@ -71,6 +76,7 @@ function save() {
         let pC = document.createElement('p')
         pC.textContent = valueC.toUpperCase()
         let pS = document.createElement('p')
+        pS.setAttribute('id', 'number')
         pS.textContent = valueS
 
         divBoard.appendChild(spanDiv1)
@@ -88,7 +94,7 @@ function save() {
         wrapperDiv.appendChild(divBoard)
 
         wrapper.appendChild(wrapperDiv)
-
+        orderScore()
     }
     inputFN.value = ''
     inputLN.value = ''
@@ -128,4 +134,15 @@ function addNum() {
     let value = Number(valueS)
     value += 5
     pS.textContent = value
+}
+
+function orderScore() {
+    const score = document.querySelectorAll('#number')
+    console.log(score.innerHTML)
+    let order = Array.from(score).sort((a, b) => {
+      return b.textContent - a.textContent
+    })
+    order.forEach((element, index) => {
+      element.parentElement.parentElement.style.order = index
+    })
 }
